@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|Win32">
+      <Configuration>debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{9FE98350-4BDF-4F15-8A9D-C52663E4120C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>wokcsgo</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)wok-csgo\utils\imgui\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SolutionDir)wok-csgo\utils\imgui\win32;$(LibraryPath)</LibraryPath>
+    <IntDir>$(SolutionDir)$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)wok-csgo\utils\imgui\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SolutionDir)wok-csgo\utils\imgui\win32;$(LibraryPath)</LibraryPath>
+    <IntDir>$(SolutionDir)$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;WOKCSGO_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile />
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WOKCSGO_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderFile />
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="events\callbacks\player_hurt.cpp" />
+    <ClCompile Include="events\events.cpp" />
+    <ClCompile Include="features\misc\movement.cpp" />
+    <ClCompile Include="features\ragebot\prediction.cpp" />
+    <ClCompile Include="features\visuals\chams.cpp" />
+    <ClCompile Include="globals.cpp" />
+    <ClCompile Include="hooks\vtables\client_dll.cpp" />
+    <ClCompile Include="hooks\vtables\client_mode.cpp" />
+    <ClCompile Include="hooks\vtables\d3d_device.cpp" />
+    <ClCompile Include="hooks\vtables\model_render.cpp" />
+    <ClCompile Include="hooks\vtables\player.cpp" />
+    <ClCompile Include="hooks\vtables\renderable.cpp" />
+    <ClCompile Include="hooks\vtables\surface.cpp" />
+    <ClCompile Include="hooks\vtables\panel.cpp" />
+    <ClCompile Include="hooks\hooks.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu\menu.cpp" />
+    <ClCompile Include="sdk\sdk.cpp" />
+    <ClCompile Include="sdk\interfaces.cpp" />
+    <ClCompile Include="sdk\_classes.cpp" />
+    <ClCompile Include="utils\cfg\cfg.cpp" />
+    <ClCompile Include="utils\imgui\imgui.cpp" />
+    <ClCompile Include="utils\imgui\imgui_demo.cpp" />
+    <ClCompile Include="utils\imgui\imgui_draw.cpp" />
+    <ClCompile Include="utils\imgui\imgui_freetype.cpp" />
+    <ClCompile Include="utils\imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="utils\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="utils\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="utils\input\input.cpp" />
+    <ClCompile Include="utils\math\datatypes.cpp" />
+    <ClCompile Include="utils\math\math.cpp" />
+    <ClCompile Include="utils\memory\memory.cpp" />
+    <ClCompile Include="utils\netvars\netvars.cpp" />
+    <ClCompile Include="utils\render\render.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common_includes.h" />
+    <ClInclude Include="events\events.h" />
+    <ClInclude Include="features\features.h" />
+    <ClInclude Include="features\misc\movement.h" />
+    <ClInclude Include="features\ragebot\prediction.h" />
+    <ClInclude Include="features\visuals\chams.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="hooks\hooks.h" />
+    <ClInclude Include="menu\menu.h" />
+    <ClInclude Include="sdk\datatypes\bf_read.h" />
+    <ClInclude Include="sdk\datatypes\bf_write.h" />
+    <ClInclude Include="sdk\datatypes\client_class.h" />
+    <ClInclude Include="sdk\datatypes\c_cvar.h" />
+    <ClInclude Include="sdk\datatypes\c_base_handle.h" />
+    <ClInclude Include="sdk\datatypes\c_utl_vector.h" />
+    <ClInclude Include="sdk\datatypes\i_material.h" />
+    <ClInclude Include="sdk\datatypes\i_material_var.h" />
+    <ClInclude Include="sdk\datatypes\i_trace_filter.h" />
+    <ClInclude Include="sdk\datatypes\key_values.h" />
+    <ClInclude Include="sdk\datatypes\recv_prop.h" />
+    <ClInclude Include="sdk\definitions.h" />
+    <ClInclude Include="sdk\interfaces\c_cs_player_resource.h" />
+    <ClInclude Include="sdk\interfaces\c_game_rules.h" />
+    <ClInclude Include="sdk\interfaces\i_game_types.h" />
+    <ClInclude Include="sdk\interfaces\i_glow_object_manager.h" />
+    <ClInclude Include="sdk\interfaces\i_input.h" />
+    <ClInclude Include="sdk\interfaces\i_cvar_system.h" />
+    <ClInclude Include="sdk\interfaces\i_debug_overlay.h" />
+    <ClInclude Include="sdk\interfaces\i_engine_trace.h" />
+    <ClInclude Include="sdk\interfaces\i_game_event_manager.h" />
+    <ClInclude Include="sdk\interfaces\i_game_movement.h" />
+    <ClInclude Include="sdk\interfaces\i_input_system.h" />
+    <ClInclude Include="sdk\interfaces\i_localize.h" />
+    <ClInclude Include="sdk\interfaces\i_material_system.h" />
+    <ClInclude Include="sdk\interfaces\i_mdl_cache.h" />
+    <ClInclude Include="sdk\interfaces\i_model_render.h" />
+    <ClInclude Include="sdk\interfaces\i_move_helper.h" />
+    <ClInclude Include="sdk\interfaces\i_panel.h" />
+    <ClInclude Include="sdk\interfaces\i_prediction.h" />
+    <ClInclude Include="sdk\interfaces\i_render_view.h" />
+    <ClInclude Include="sdk\interfaces\i_surface.h" />
+    <ClInclude Include="sdk\interfaces\i_surface_data.h" />
+    <ClInclude Include="sdk\interfaces\i_view_render_beams.h" />
+    <ClInclude Include="sdk\interfaces\i_weapon_system.h" />
+    <ClInclude Include="sdk\_classes.h" />
+    <ClInclude Include="sdk\interfaces.h" />
+    <ClInclude Include="sdk\interfaces\i_client_state.h" />
+    <ClInclude Include="sdk\interfaces\i_global_vars.h" />
+    <ClInclude Include="sdk\interfaces\i_client_entity_list.h" />
+    <ClInclude Include="sdk\interfaces\i_mem_alloc.h" />
+    <ClInclude Include="sdk\interfaces\i_model_info.h" />
+    <ClInclude Include="sdk\interfaces\i_net_channel.h" />
+    <ClInclude Include="sdk\interfaces\i_engine_client.h" />
+    <ClInclude Include="sdk\interfaces\i_base_client_dll.h" />
+    <ClInclude Include="sdk\interfaces\i_client_mode.h" />
+    <ClInclude Include="sdk\other\i_client_entity.h" />
+    <ClInclude Include="sdk\other\i_collideable.h" />
+    <ClInclude Include="sdk\sdk.h" />
+    <ClInclude Include="sdk\_structs.h" />
+    <ClInclude Include="singleton.h" />
+    <ClInclude Include="utils\cfg\cfg.h" />
+    <ClInclude Include="utils\cfg\json\adl_serializer.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\conversions\from_json.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\conversions\to_chars.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\conversions\to_json.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\exceptions.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\input\binary_reader.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\input\input_adapters.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\input\json_sax.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\input\lexer.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\input\parser.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\input\position_t.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\iterators\internal_iterator.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\iterators\iteration_proxy.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\iterators\iterator_traits.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\iterators\iter_impl.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\iterators\json_reverse_iterator.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\iterators\primitive_iterator.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\json_pointer.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\json_ref.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\macro_scope.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\macro_unscope.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\meta\cpp_future.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\meta\detected.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\meta\is_sax.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\meta\type_traits.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\meta\void_t.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\output\binary_writer.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\output\output_adapters.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\output\serializer.hpp" />
+    <ClInclude Include="utils\cfg\json\detail\value_t.hpp" />
+    <ClInclude Include="utils\cfg\json\json.hpp" />
+    <ClInclude Include="utils\cfg\json\json_fwd.hpp" />
+    <ClInclude Include="utils\imgui\imconfig.h" />
+    <ClInclude Include="utils\imgui\imgui.h" />
+    <ClInclude Include="utils\imgui\imgui_freetype.h" />
+    <ClInclude Include="utils\imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="utils\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="utils\imgui\imgui_internal.h" />
+    <ClInclude Include="utils\imgui\imstb_rectpack.h" />
+    <ClInclude Include="utils\imgui\imstb_textedit.h" />
+    <ClInclude Include="utils\imgui\imstb_truetype.h" />
+    <ClInclude Include="utils\input\input.h" />
+    <ClInclude Include="utils\math\datatypes.h" />
+    <ClInclude Include="utils\math\math.h" />
+    <ClInclude Include="utils\memory\memory.h" />
+    <ClInclude Include="utils\netvars\data_map.h" />
+    <ClInclude Include="utils\netvars\netvars.h" />
+    <ClInclude Include="utils\obfuscation\fnv1a.h" />
+    <ClInclude Include="utils\obfuscation\xor.h" />
+    <ClInclude Include="utils\render\render.h" />
+    <ClInclude Include="utils\utils.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

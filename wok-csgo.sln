@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wok-csgo", "wok-csgo\wok-csgo.vcxproj", "{9FE98350-4BDF-4F15-8A9D-C52663E4120C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug|x86 = debug|x86
+		release|x86 = release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FE98350-4BDF-4F15-8A9D-C52663E4120C}.debug|x86.ActiveCfg = debug|Win32
+		{9FE98350-4BDF-4F15-8A9D-C52663E4120C}.debug|x86.Build.0 = debug|Win32
+		{9FE98350-4BDF-4F15-8A9D-C52663E4120C}.release|x86.ActiveCfg = release|Win32
+		{9FE98350-4BDF-4F15-8A9D-C52663E4120C}.release|x86.Build.0 = release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAB342D2-C13B-4C62-8FE7-CED24E1BB752}
+	EndGlobalSection
+EndGlobal
