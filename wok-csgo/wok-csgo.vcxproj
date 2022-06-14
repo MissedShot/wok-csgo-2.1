@@ -105,6 +105,7 @@
     <ClCompile Include="hooks\vtables\client_dll.cpp" />
     <ClCompile Include="hooks\vtables\client_mode.cpp" />
     <ClCompile Include="hooks\vtables\d3d_device.cpp" />
+    <ClCompile Include="hooks\vtables\key_values.cpp" />
     <ClCompile Include="hooks\vtables\model_render.cpp" />
     <ClCompile Include="hooks\vtables\player.cpp" />
     <ClCompile Include="hooks\vtables\renderable.cpp" />

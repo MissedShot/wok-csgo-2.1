@@ -7,6 +7,14 @@ namespace hooks {
 
 	void undo();
 
+	namespace key_values_system {
+		namespace alloc_key_values_memory {
+			constexpr auto index = 1u;
+			using T = void*(__thiscall*)(void*, int);
+			void* __fastcall fn(void* ecx, void* edx, int size);
+		}
+	}
+
 	namespace d3d_device {
 		namespace reset {
 			constexpr auto index = 16u;
@@ -92,4 +100,5 @@ namespace hooks {
 	extern std::unique_ptr<memory::hook_t> m_surface;
 	extern std::unique_ptr<memory::hook_t> m_player;
 	extern std::unique_ptr<memory::hook_t> m_renderable;
+	extern std::unique_ptr<memory::hook_t> m_key_values;
 }

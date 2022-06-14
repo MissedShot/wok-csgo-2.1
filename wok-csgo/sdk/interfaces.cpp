@@ -11,6 +11,7 @@ namespace interfaces {
 		m_client_state = **memory::get_vfunc<memory::address_t>(m_engine, 12).self_offset(0x10).cast<i_client_state***>();
 
 		m_mem_alloc = *EXPORT("tier0.dll", "g_pMemAlloc").cast<i_mem_alloc**>();
+		m_key_values_system = EXPORT("vstdlib.dll", "KeyValuesSystem").cast<i_key_values_system*(*)()>()();
 
 		m_model_info = get<i_model_info*>(FNV1A("engine.dll"), FNV1A("VModelInfoClient004"));
 		m_surface = get<i_surface*>(FNV1A("vguimatsurface.dll"), FNV1A("VGUI_Surface031"));
@@ -53,6 +54,7 @@ namespace interfaces {
 	i_global_vars*			m_global_vars = nullptr;
 	i_client_state*			m_client_state = nullptr;
 	i_mem_alloc*			m_mem_alloc = nullptr;
+	i_key_values_system*	m_key_values_system = nullptr;
 	i_model_info*			m_model_info = nullptr;
 	i_surface*				m_surface = nullptr;
 	i_input*				m_input = nullptr;

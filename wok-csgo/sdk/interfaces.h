@@ -40,6 +40,7 @@ namespace interfaces {
 	extern i_global_vars*			m_global_vars;
 	extern i_client_state*			m_client_state;
 	extern i_mem_alloc*				m_mem_alloc;
+	extern i_key_values_system*		m_key_values_system;
 	extern i_model_info*			m_model_info;
 	extern i_surface*				m_surface;
 	extern i_input*					m_input;

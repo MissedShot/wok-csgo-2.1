@@ -4,6 +4,12 @@ namespace hooks {
 	void init() {
 		// // // // // // // // // // // // // // // // // // // // // // //
 
+		m_key_values = std::make_unique<memory::hook_t>(interfaces::m_key_values_system);
+
+		m_key_values->hook(key_values_system::alloc_key_values_memory::index, key_values_system::alloc_key_values_memory::fn);
+
+		// // // // // // // // // // // // // // // // // // // // // // //
+
 		m_d3d_device = std::make_unique<memory::hook_t>(interfaces::m_d3d_device);
 
 		m_d3d_device->hook(d3d_device::reset::index, d3d_device::reset::fn);
@@ -64,6 +70,7 @@ namespace hooks {
 		m_client_mode->unhook();
 		m_client_dll->unhook();
 		m_d3d_device->unhook();
+		m_key_values->unhook();
 	}
 
 	std::unique_ptr<memory::hook_t> m_d3d_device = nullptr;
@@ -74,4 +81,5 @@ namespace hooks {
 	std::unique_ptr<memory::hook_t> m_surface = nullptr;
 	std::unique_ptr<memory::hook_t> m_player = nullptr;
 	std::unique_ptr<memory::hook_t> m_renderable = nullptr;
+	std::unique_ptr<memory::hook_t> m_key_values = nullptr;
 }
