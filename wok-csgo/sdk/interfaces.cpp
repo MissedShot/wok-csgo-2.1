@@ -43,13 +43,7 @@ namespace interfaces {
 		m_panel = get<i_panel*>(FNV1A("vgui2.dll"), FNV1A("VGUI_Panel009"));
 		m_render_view = get<i_render_view*>(FNV1A("engine.dll"), FNV1A("VEngineRenderView014"));
 
-		if (const auto shader_device = get<uintptr_t**>(FNV1A("shaderapidx9.dll"), FNV1A("ShaderDevice001"))) {
-			if (const auto device_table = shader_device[0]) {
-				if (const auto shutdown_device = device_table[37]) {
-					m_d3d_device = **reinterpret_cast<IDirect3DDevice9***>(shutdown_device + 0x2);
-				}
-			}
-		}
+		m_d3d_device = **SIG("shaderapidx9.dll", "A1 ? ? ? ? 50 8B 08 FF 51 0C").self_offset(0x1).cast<IDirect3DDevice9***>();
 	}
 
 	i_base_client_dll*		m_client_dll = nullptr;

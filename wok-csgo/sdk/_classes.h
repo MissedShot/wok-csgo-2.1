@@ -361,12 +361,12 @@ public:
 
 	NETVAR(get_pin_pulled(), bool, "CBaseCSGrenade->m_bPinPulled")
 	NETVAR(get_throw_time(), float, "CBaseCSGrenade->m_fThrowTime")
+	NETVAR(get_throw_strength(), float, "CBaseCSGrenade->m_flThrowStrength")
 
 	NETVAR(get_post_pone_fire_ready_time(), float, "CWeaponCSBase->m_flPostponeFireReadyTime")
 	NETVAR(get_accuracy_penalty(), float, "CWeaponCSBase->m_fAccuracyPenalty")
 	NETVAR(get_recoil_index(), float, "CWeaponCSBase->m_flRecoilIndex")
 	NETVAR(get_last_shot_time(), float, "CWeaponCSBase->m_fLastShotTime")
-	NETVAR(get_throw_strength(), float, "CWeaponCSBase->m_flThrowStrength")
 	NETVAR(get_ammo(), int, "CBaseCombatWeapon->m_iClip1")
 	NETVAR(get_zoom_level(), int, "CWeaponCSBaseGun->m_zoomLevel")
 	NETVAR(get_next_primary_attack(), float, "CBaseCombatWeapon->m_flNextPrimaryAttack")

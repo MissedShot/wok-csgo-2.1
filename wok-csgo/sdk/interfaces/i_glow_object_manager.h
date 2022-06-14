@@ -18,6 +18,7 @@ public:
 
 		__forceinline bool is_unused() const { return m_next_free_slot != -2; }
 
+		int					m_next_free_slot;
 		c_base_entity*		m_entity;
 		float				m_red;
 		float				m_green;
@@ -36,7 +37,6 @@ public:
 		int					m_full_bloom_stencil_test_value;
 		int					m_glow_style;
 		int					m_split_screen_slot;
-		int					m_next_free_slot;
 	};
 
 	c_utl_vector<glow_object_t> m_glow_object_definitions;
