@@ -18,6 +18,20 @@ player_info_t c_cs_player::get_info() {
 	return ret;
 }
 
+bool c_cs_player::is_enemy(c_cs_player* from) {
+	if (this == from)
+		return false;
+
+	if (interfaces::m_game_types->get_cur_game_type() == GAME_TYPE_FREEFORALL)
+		return get_survival_team() != from->get_survival_team();
+
+	static const auto mp_teammates_are_enemies = interfaces::m_cvar_system->find_var(FNV1A("mp_teammates_are_enemies"));
+	if (mp_teammates_are_enemies->get_bool())
+		return true;
+
+	return get_team() != from->get_team();
+}
+
 int c_base_animating::get_sequence_activity(int sequence) {
 	const auto model = get_model();
 	if (!model)
@@ -38,15 +52,4 @@ c_base_combat_weapon* c_base_combat_character::get_active_weapon() {
 		return nullptr;
 
 	return reinterpret_cast<c_base_combat_weapon*>(handle.get());
-}
-
-bool c_base_entity::is_enemy(c_base_entity* from) {
-	if (this == from)
-		return false;
-
-	static const auto mp_teammates_are_enemies = interfaces::m_cvar_system->find_var(FNV1A("mp_teammates_are_enemies"));
-	if (mp_teammates_are_enemies->get_bool())
-		return true;
-
-	return get_team() != from->get_team();
 }

@@ -40,11 +40,11 @@ struct mstudiohitboxset_t {
 		return reinterpret_cast<const char*>(reinterpret_cast<uint8_t*>(this) + m_name_index);
 	}
 
-	__forceinline mstudiobbox_t* get_hitbox(int i) {
+	__forceinline const mstudiobbox_t* get_hitbox(int i) const {
 		if (i > m_hitboxes_count)
 			return nullptr;
 
-		return reinterpret_cast<mstudiobbox_t*>(reinterpret_cast<uint8_t*>(this) + m_hitbox_index) + i;
+		return reinterpret_cast<const mstudiobbox_t*>(reinterpret_cast<const uint8_t*>(this) + m_hitbox_index) + i;
 	}
 };
 

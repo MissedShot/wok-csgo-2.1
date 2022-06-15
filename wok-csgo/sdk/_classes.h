@@ -149,8 +149,6 @@ public:
 		get_most_recent_model_bone_counter() = most_recent_model_bone_counter - 1ul;
 	}
 
-	bool is_enemy(c_base_entity* from);
-
 	__forceinline bool is_breakable() {
 		if (!this
 			|| !get_index())
@@ -333,6 +331,7 @@ public:
 	NETVAR(is_ghost(), bool, "CCSPlayer->m_bIsPlayerGhost")
 	NETVAR(get_health_boost_time(), float, "CCSPlayer->m_flHealthShotBoostExpirationTime")
 	NETVAR(get_lby(), float, "CCSPlayer->m_flLowerBodyYawTarget")
+	NETVAR(get_survival_team(), int, "CCSPlayer->m_nSurvivalTeam")
 	NETVAR_OFFSET(get_flash_alpha(), float, "CCSPlayer->m_flFlashMaxAlpha", -0x8)
 	NETVAR_OFFSET(get_anim_state(), c_anim_state*, "CCSPlayer->m_bIsScoped", -0x14)
 
@@ -345,6 +344,8 @@ public:
 	VFUNC_SIG(invalidate_physics_recursive(int flags), "client.dll", "55 8B EC 83 E4 F8 83 EC 0C 53 8B 5D 08 8B C3 56", void(__thiscall*)(void*, int), flags)
 
 	player_info_t get_info();
+
+	bool is_enemy(c_cs_player* from);
 
 	__forceinline static uintptr_t* get_vtable() {
 		static const auto vtable = SIG("client.dll", "55 8B EC 83 E4 F8 83 EC 18 56 57 8B F9 89 7C 24 0C").self_offset(0x47).cast<uintptr_t*>();
