@@ -117,6 +117,33 @@ matrix3x4_t qangle_t::matrix() const {
 	);
 }
 
+vec3_t qangle_t::vector(vec3_t* right, vec3_t* up) const {
+	vec3_t ret = vec3_t();
+	vec3_t cos, sin;
+
+	math::sin_cos(math::deg_to_rad(x), sin.x, cos.x);
+	math::sin_cos(math::deg_to_rad(y), sin.y, cos.y);
+	math::sin_cos(math::deg_to_rad(z), sin.z, cos.z);
+
+	ret.x = cos.x * cos.y;
+	ret.y = cos.x * sin.y;
+	ret.z = -sin.x;
+
+	if (right) {
+		right->x = -sin.z * sin.x * cos.y + -cos.z * -sin.y;
+		right->y = -sin.z * sin.x * sin.y + -cos.z * cos.y;
+		right->z = -sin.z * cos.x;
+	}
+
+	if (up) {
+		up->x = cos.z * sin.x * cos.y + -sin.z * -sin.y;
+		up->y = cos.z * sin.x * sin.y + -sin.z * cos.y;
+		up->z = cos.z * cos.x;
+	}
+
+	return ret;
+}
+
 qangle_t matrix3x4_t::angle() const {
 	auto ret = qangle_t();
 

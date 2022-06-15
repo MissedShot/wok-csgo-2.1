@@ -137,6 +137,4 @@ namespace math {
 			ret	8
 		}
 	}
-
-	void angle_vectors(const qangle_t& angles, vec3_t* forward, vec3_t* right = nullptr, vec3_t* up = nullptr);
 }
