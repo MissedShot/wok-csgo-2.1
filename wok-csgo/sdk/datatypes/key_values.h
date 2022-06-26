@@ -2,16 +2,16 @@
 
 class i_key_values_system {
 public:
-	VFUNC(register_size(int size), 0, void(__thiscall*)(void*, int), size)
-	VFUNC(alloc_key(int size), 1, void* (__thiscall*)(void*, int), size )
-	VFUNC(free_key(void* mem), 2, void(__thiscall* )(void*, void*), mem )
-	VFUNC(get_symbol(const char* name, bool create = true), 3, int(__thiscall*)(void*, const char*, bool), name, create)
-	VFUNC(get_string(int symbol), 4, const char* (__thiscall*)(void*, int), symbol)
-	VFUNC(add_key(void* mem, int symbol_name), 5, void(__thiscall*)(void*, void*, int), mem, symbol_name)
-	VFUNC(remove_key(void* mem), 6, void(__thiscall*)(void*, void*), mem)
-	VFUNC(set_key(const char* name, bool value), 7, void(__thiscall*)(void*, const char*, bool), name, value)
-	VFUNC(get_key(const char* name), 8, bool(__thiscall*)(void*, const char*), name)
-	VFUNC(get_symbol_sensetive(int& insensitive_symbol, const char* name, bool create = true), 9, int(__thiscall*)(void*, int&, const char*, bool), insensitive_symbol, name, create)
+	VFUNC(register_size(int size), 1, void(__thiscall*)(void*, int), size)
+	VFUNC(alloc_key(int size), 2, void* (__thiscall*)(void*, int), size )
+	VFUNC(free_key(void* mem), 3, void(__thiscall* )(void*, void*), mem )
+	VFUNC(get_symbol(const char* name, bool create = true), 4, int(__thiscall*)(void*, const char*, bool), name, create)
+	VFUNC(get_string(int symbol), 5, const char* (__thiscall*)(void*, int), symbol)
+	VFUNC(add_key(void* mem, int symbol_name), 6, void(__thiscall*)(void*, void*, int), mem, symbol_name)
+	VFUNC(remove_key(void* mem), 7, void(__thiscall*)(void*, void*), mem)
+	VFUNC(set_key(const char* name, bool value), 8, void(__thiscall*)(void*, const char*, bool), name, value)
+	VFUNC(get_key(const char* name), 9, bool(__thiscall*)(void*, const char*), name)
+	VFUNC(get_symbol_sensetive(int& insensitive_symbol, const char* name, bool create = true), 10, int(__thiscall*)(void*, int&, const char*, bool), insensitive_symbol, name, create)
 };
 
 class c_key_values {

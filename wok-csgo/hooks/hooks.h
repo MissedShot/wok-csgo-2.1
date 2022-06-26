@@ -9,7 +9,7 @@ namespace hooks {
 
 	namespace key_values_system {
 		namespace alloc_key_values_memory {
-			constexpr auto index = 1u;
+			constexpr auto index = 2u;
 			using T = void*(__thiscall*)(void*, int);
 			void* __fastcall fn(void* ecx, void* edx, int size);
 		}
