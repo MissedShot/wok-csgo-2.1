@@ -28,8 +28,6 @@ public:
 		float				m_alpha_max;
 		float				m_bloom_amount;
 		float				m_pulse_overdrive;
-		bool				m_render_invisible;
-		bool				m_render_visible;
 		bool				m_render_when_occluded;
 		bool				m_render_when_unoccluded;
 		bool				m_full_bloom_render;
