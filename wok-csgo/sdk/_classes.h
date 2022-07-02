@@ -240,8 +240,9 @@ public:
 	DATA_MAP(get_buttons_last(), bit_flag_t<uint32_t>, "m_afButtonLast")
 	DATA_MAP(get_buttons_pressed(), bit_flag_t<uint32_t>, "m_afButtonPressed")
 	DATA_MAP(get_buttons_released(), bit_flag_t<uint32_t>, "m_afButtonReleased")
-	OFFSET(get_buttons_disabled(), bit_flag_t<uint32_t>, 0x3330)
-	OFFSET(get_buttons_forced(), bit_flag_t<uint32_t>, 0x3334)
+
+	NETVAR_OFFSET(get_button_disabled(), bit_flag_t<uint32_t>, "CBasePlayer->m_hViewEntity", -0xC)
+	NETVAR_OFFSET(get_button_forced(), bit_flag_t<uint32_t>, "CBasePlayer->m_hViewEntity", -0x8)
 
 	DATA_MAP(get_collision_state(), int, "m_vphysicsCollisionState")
 
@@ -274,7 +275,7 @@ public:
 	VFUNC_SIG(using_standard_weapons_in_vehicle(), "client.dll", "56 57 8B F9 8B 97 ? ? ? ? 83 FA FF 74 41", bool(__thiscall*)(void*))
 	VFUNC_SIG(physics_run_think(int index), "client.dll", "55 8B EC 83 EC 10 53 56 57 8B F9 8B 87", bool(__thiscall*)(void*, int), index)
 	VFUNC_SIG(post_think_v_physics(), "client.dll", "55 8B EC 83 E4 F8 81 EC ? ? ? ? 53 8B D9 56 57 83 BB", bool(__thiscall*)(void*))
-	VFUNC_SIG(simulate_player_simulated_entities(), "client.dll", "56 8B F1 57 8B BE ? ? ? ? 83 EF 01 78 72", bool(__thiscall*)(void*))
+	VFUNC_SIG(simulate_player_simulated_entities(), "client.dll", "56 8B F1 57 8B ? ? ? ? ? 83 EF 01 78 74", bool(__thiscall*)(void*))
 
 	__forceinline bool is_alive() { return get_life_state() == LIFE_ALIVE && get_health(); }
 
