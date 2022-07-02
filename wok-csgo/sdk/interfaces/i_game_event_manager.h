@@ -17,13 +17,13 @@ public:
 	virtual const wchar_t*	get_wstring(const char* name, const wchar_t* def_value = L"") = 0;
 	virtual const void*		get_ptr(const char* name, const void* def_value = nullptr) = 0;
 
-	virtual void			set_ptr(const char* name, const void* value) = 0;
 	virtual void			set_bool(const char* name, bool value) = 0;
 	virtual void			set_int(const char* name, int value) = 0;
 	virtual void			set_uint64(const char* name, unsigned long value) = 0;
 	virtual void			set_float(const char* name, float value) = 0;
 	virtual void			set_string(const char* name, const char* value) = 0;
 	virtual void			set_wstring(const char* name, const wchar_t* value) = 0;
+	virtual void			set_ptr(const char* name, const void* value) = 0;
 };
 
 class i_game_event_listener {
