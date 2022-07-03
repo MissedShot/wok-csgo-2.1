@@ -246,8 +246,6 @@ public:
 
 	DATA_MAP(get_collision_state(), int, "m_vphysicsCollisionState")
 
-	OFFSET(get_spawn_time(), float, 0x103C0)
-
 	NETVAR(get_fall_velocity(), float, "CBasePlayer->m_flFallVelocity")
 	NETVAR(get_observer_mode(), e_observer_mode, "CBasePlayer->m_iObserverMode")
 	NETVAR(get_observer_target(), c_base_handle, "CBasePlayer->m_hObserverTarget")
@@ -272,7 +270,7 @@ public:
 	VFUNC(set_local_view_angles(const qangle_t& angle), 373, void(__thiscall*)(void*, const qangle_t&), angle)
 
 	VFUNC_SIG(unknown_think(int unk), "client.dll", "55 8B EC 56 57 8B F9 8B B7 ? ? ? ? 8B C6 C1 E8 16 24 01 74 18", void(__thiscall*)(void*, int), unk)
-	VFUNC_SIG(using_standard_weapons_in_vehicle(), "client.dll", "56 57 8B F9 8B 97 ? ? ? ? 83 FA FF 74 41", bool(__thiscall*)(void*))
+	VFUNC_SIG(using_standard_weapons_in_vehicle(), "client.dll", "56 57 8B F9 8B ? ? ? ? ? 83 FA FF 74 43", bool(__thiscall*)(void*))
 	VFUNC_SIG(physics_run_think(int index), "client.dll", "55 8B EC 83 EC 10 53 56 57 8B F9 8B 87", bool(__thiscall*)(void*, int), index)
 	VFUNC_SIG(post_think_v_physics(), "client.dll", "55 8B EC 83 E4 F8 81 EC ? ? ? ? 53 8B D9 56 57 83 BB", bool(__thiscall*)(void*))
 	VFUNC_SIG(simulate_player_simulated_entities(), "client.dll", "56 8B F1 57 8B ? ? ? ? ? 83 EF 01 78 74", bool(__thiscall*)(void*))
@@ -335,6 +333,7 @@ public:
 	NETVAR(get_survival_team(), int, "CCSPlayer->m_nSurvivalTeam")
 	NETVAR_OFFSET(get_flash_alpha(), float, "CCSPlayer->m_flFlashMaxAlpha", -0x8)
 	NETVAR_OFFSET(get_anim_state(), c_anim_state*, "CCSPlayer->m_bIsScoped", -0x14)
+	NETVAR_OFFSET(get_spawn_time(), float, "CCSPlayer->m_iAddonBits", -0x4)
 
 	VFUNC(standard_blending_rules(c_studio_hdr* hdr, vec3_t* vec, vec4_t* q, float time, int mask), 206, void(__thiscall*)(void*, c_studio_hdr*, vec3_t*, vec4_t*, float, int), hdr, vec, q, time, mask)
 	VFUNC(build_transformations(c_studio_hdr* hdr, vec3_t* vec, vec4_t* q, matrix3x4_t& transform, int mask, uint8_t* computed), 190, void(__thiscall*)(void*, c_studio_hdr*, vec3_t*, vec4_t*, matrix3x4_t const&, int, uint8_t*), hdr, vec, q, transform, mask, computed)
