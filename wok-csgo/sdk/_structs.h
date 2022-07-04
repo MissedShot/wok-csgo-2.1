@@ -183,7 +183,7 @@ public:
 	char					pad11[388];
 	float					m_adjusted_eye_pos_height;
 	bool					m_should_adjust_eye_pos_height;
-	char					pad12[7];
+	char					pad12[11];
 	float					m_min_body_yaw;
 	float					m_max_body_yaw;
 	float					m_min_body_pitch;
