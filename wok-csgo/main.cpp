@@ -51,6 +51,8 @@ int __stdcall DllMain(HMODULE module, unsigned long reason_for_call, void* reser
 
 	DisableThreadLibraryCalls(module);
 
+	globals::m_module = module;
+
 	if (const auto thread = CreateThread(0, 0, init, module, 0, 0)) {
 		CloseHandle(thread);
 	}
