@@ -32,5 +32,3 @@
 
 #pragma comment(lib, "d3dx9.lib")
 #pragma comment(lib, "freetype.lib")
-
-#pragma intrinsic(_AdressOfReturnAddress)
