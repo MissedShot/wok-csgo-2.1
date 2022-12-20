@@ -123,7 +123,7 @@ namespace memory {
 		}
 
 		template <typename T = address_t>
-		__forceinline T rel8(ptrdiff_t offset = 0x1) const { return (T)(m_ptr + offset + sizeof(uint8_t) + *reinterpret_cast<char*>(m_ptr + offset)); }
+		__forceinline T rel8(ptrdiff_t offset = 0x1) const { return (T)(m_ptr + offset + sizeof(uint8_t) + *reinterpret_cast<int8_t*>(m_ptr + offset)); }
 
 		__forceinline address_t& self_rel8(ptrdiff_t offset = 0x1) {
 			m_ptr = rel8(offset);
@@ -132,7 +132,7 @@ namespace memory {
 		}
 
 		template <typename T = address_t>
-		__forceinline T rel32(ptrdiff_t offset = 0x1) const { return (T)(m_ptr + offset + sizeof(uintptr_t) + *reinterpret_cast<ptrdiff_t*>(m_ptr + offset)); }
+		__forceinline T rel32(ptrdiff_t offset = 0x1) const { return (T)(m_ptr + offset + sizeof(uint32_t) + *reinterpret_cast<int32_t*>(m_ptr + offset)); }
 
 		__forceinline address_t& self_rel32(ptrdiff_t offset = 0x1) {
 			m_ptr = rel32(offset);
