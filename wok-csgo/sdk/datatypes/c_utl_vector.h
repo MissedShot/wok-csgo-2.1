@@ -47,7 +47,7 @@ public:
 
 		const auto alloc_requested = m_alloc_count + number;
 
-		auto new_alloc_count = calc_new_alloc_count(m_alloc_count, m_grow_size, alloc_requested, sizeof(T));
+		auto new_alloc_count = calc_new_allocation_count(m_alloc_count, m_grow_size, alloc_requested, sizeof(T));
 
 		if (static_cast<int>(static_cast<I>(new_alloc_count)) < alloc_requested) {
 			if (static_cast<int>(static_cast<I>(new_alloc_count)) == 0
