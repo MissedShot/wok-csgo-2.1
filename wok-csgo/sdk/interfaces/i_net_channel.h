@@ -60,7 +60,7 @@ public:
 
 class i_move_msg {
 public:
-	char			pad0[8];
+	char			pad0[12];
 	int				m_backup_commands;
 	int				m_new_commands;
 	std::string*	m_data;
