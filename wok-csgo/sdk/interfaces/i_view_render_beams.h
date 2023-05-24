@@ -48,7 +48,7 @@ class beam_t;
 
 class i_view_render_beams {
 public:
-	VFUNC(draw_beam(beam_t* beam), 5, void(__thiscall*)(void*, beam_t*), beam)
-	VFUNC(create_beam_points(beam_info_t& info), 9, beam_t*(__thiscall*)(void*, beam_info_t&), info)
-	VFUNC(create_beam_ring_points(beam_info_t& info), 11, beam_t*(__thiscall*)(void*, beam_info_t&), info)
+	VFUNC(draw_beam(beam_t* beam), 4, void(__thiscall*)(void*, beam_t*), beam)
+	VFUNC(create_beam_points(beam_info_t& info), 12, beam_t*(__thiscall*)(void*, beam_info_t&), info)
+	VFUNC(create_beam_ring_points(beam_info_t& info), 16, beam_t*(__thiscall*)(void*, beam_info_t&), info)
 };
